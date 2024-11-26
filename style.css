@@ -1,0 +1,194 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url(/assets/fonts/Figtree-VariableFont_wght.ttf) format("truetype");
+  font-display: swap;
+  font-weight: 500 800;
+}
+:root {
+  --clr_Yellow: hsl(47, 88%, 63%);
+
+  --clr_White: hsl(0, 0%, 100%);
+
+  --clr_Gray_500: hsl(0, 0%, 42%);
+  --clr_Gray_950: hsl(0, 0%, 7%);
+
+  --ff-primary: "Figtree";
+
+  --fs-large: 1.3rem;
+  --fs-large_600: 1.8rem;
+  --fs-medium_600: 1.2rem;
+  --fs-regular: .8rem;
+  --fs-regular_600:1rem;
+
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-800: 800;
+}
+
+
+body{
+    font-family: var(--ff-primary);
+    background-color: var(--clr_Yellow);
+    color: var(--clr_Gray_950);
+    font-size: var(--fs-regular);
+    height: 100vh;
+    display: grid;
+    gap: 1rem;
+    place-content: center;
+}
+
+.grid{
+    display: grid;
+    gap: 1rem;
+}
+
+.blog_preview_card{
+    max-width: 325px;
+    background-color: var(--clr_White);
+    border: 2px solid var(--clr_Gray_950);
+    border-radius: 1rem;
+    padding: 1.3rem;
+    box-shadow: .5rem .5rem;
+}
+
+.blog_preview_card .card_image{
+    border-radius: .7rem;
+    overflow: hidden;
+}
+
+.card_image img{
+    object-position: -27px;
+}
+
+.publish_type .capsul{
+    display: inline-block;
+    background-color: var(--clr_Yellow);
+    padding: 2px 12px;
+    font-weight: var(--fw-800);
+    margin-bottom: .75rem;
+    border-radius: 3px;
+}
+
+.card_title{
+    font-size: var(--fs-large);
+    line-height:1;
+    font-weight: var(--fw-800);
+}
+
+.card_title:hover{
+color: var(--clr_Yellow);
+cursor: pointer;
+}
+
+.info{
+    color: var(--clr_Gray_500);
+    font-weight: var(--fw-600);
+}
+
+.creator{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.creator img{
+    height: 2rem;
+}
+.creator p{
+    font-weight: var(--fw-800);
+}
+
+@media (min-width:600px) {
+  body{
+    font-size: var(--fs-regular_600);
+  }
+  .grid{
+    display: grid;
+    gap: 2rem;
+}
+
+.blog_preview_card{
+    max-width: 450px;
+}
+
+.card_image img{
+  width: 100%;
+  height: 100%;
+  object-position: 0px;
+}
+
+.publish_type .capsul{
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.card_title{
+    font-size: var(--fs-large_600);
+    line-height: .5;
+}
+
+
+.info{
+  font-size: var(--fs-medium_600);
+}
+
+}
